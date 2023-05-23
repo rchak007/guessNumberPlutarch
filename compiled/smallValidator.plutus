@@ -1,0 +1,8 @@
+{
+    "cborHex": "582858260100003232322225333573466ebcc010c014008c010c01400c526165742460046ea800555cf1",
+    "description": "smallValidator",
+    "params": [],
+    "rawHex": "58260100003232322225333573466ebcc010c014008c010c01400c526165742460046ea800555cf1",
+    "role": "ValidatorRole",
+    "version": "ScriptV2"
+}
