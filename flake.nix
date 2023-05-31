@@ -1,5 +1,5 @@
 {
-  description = "plutarch-template";
+  description = "guessnumberplutarch";
 
   nixConfig = {
     extra-experimental-features = [ "nix-command" "flakes" "ca-derivations" ];

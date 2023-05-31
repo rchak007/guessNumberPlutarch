@@ -23,7 +23,7 @@ extra-source-files: CHANGELOG.md
 
 common lang
   ghc-options:
-    -Werror -Wall -Wcompat -Wincomplete-uni-patterns
+    -- -Werror -Wall -Wcompat -Wincomplete-uni-patterns
     -Wno-unused-do-bind -Wno-partial-type-signatures
     -Wmissing-export-lists -Wincomplete-record-updates
     -Wmissing-deriving-strategies -Wno-name-shadowing -Wunused-foralls
@@ -104,6 +104,7 @@ library
     SmallValidator
     DAOValidator
     CrowdFundingOnChain
+    -- Plutarch.Docs.Run
   -- Compile
   -- other-modules: Utils
 
@@ -160,6 +161,7 @@ executable guessnumberplutarch
   -- other-extensions:
   build-depends: guessnumberplutarch
 
-  -- other-modules:
-  --                 Utils
-  hs-source-dirs: app
+  other-modules:
+                  Utils
+                  , SmallValidator
+  hs-source-dirs: src

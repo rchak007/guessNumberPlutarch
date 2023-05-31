@@ -17,6 +17,7 @@ import Plutarch.Prelude
 import Plutarch.Extra.ScriptContext (ptryFromInlineDatum, pfromPDatum)
 import Utils (ppositiveSymbolValueOf, (#>), (#>=))
 import "liqwid-plutarch-extra" Plutarch.Extra.TermCont 
+import qualified Data.ByteString as BS
 
 pkh1 :: Term s PPubKeyHash 
 pkh1 = pconstant "deadbeef1"
@@ -220,4 +221,37 @@ pvalidateDaoStateMint = phoistAcyclic $ plam $ \oref context -> unTermCont $ do
       (pconstant ())
       perror 
   
-  
+
+-- test1 :: Integer
+-- test1 = 5
+
+-- pint5 :: Term s pInteger 
+-- pint5 =  5
+
+b :: Term s PBool
+b = pconstant False
+-- ghci> plift b
+-- False
+
+-- funcTest1 :: Integer -> pInteger
+-- functest1 i = 
+x' :: Term s PInteger
+x' = pconstant 3
+-- ghci> plift x'
+-- 3
+
+bs1 :: Term s PByteString
+bs1 = pconstant "byteText"
+
+pkh5 :: Term s PPubKeyHash 
+-- pkh5 = pconstant "deadbeef1"    --- will fail
+-- ghci> plift pkh5
+-- *** Exception: UnpairedDigit
+
+-- pkh5 = pconstant "deadbeef"  -- works
+-- ghci> plift pkh5
+-- deadbeef
+
+pkh5 = pconstant "41"  -- works
+-- ghci> plift pkh5
+-- 41
